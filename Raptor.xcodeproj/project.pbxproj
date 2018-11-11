@@ -64,6 +64,7 @@
 		946F7DC62197F4F600A2A1D3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				946F7DC32197F4F300A2A1D3 /* srcon.h */,
 				946F7DCB2198001E00A2A1D3 /* umbrella.cpp */,
 				946F7DC22197F4F300A2A1D3 /* srcon.cpp */,
 			);
@@ -74,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				946F7DCA2197FF1800A2A1D3 /* umbrella.h */,
-				946F7DC32197F4F300A2A1D3 /* srcon.h */,
 			);
 			path = include;
 			sourceTree = "<group>";

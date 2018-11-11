@@ -1,2 +1,5 @@
-umbrella header "include/umbrella.h"
-module * { export * }
+module Raptor {
+    umbrella header "include/umbrella.h"
+    link umbrella
+    export *
+}

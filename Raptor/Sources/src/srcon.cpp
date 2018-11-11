@@ -8,7 +8,7 @@
 #include <chrono>
 #include <thread>
 
-#include "../include/srcon.h"
+#include "srcon.h"
 
 //#define DEBUG 1
 #ifdef DEBUG

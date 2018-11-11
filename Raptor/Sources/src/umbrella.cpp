@@ -7,7 +7,7 @@
 //
 
 #include "../include/umbrella.h"
-#include "../include/srcon.h"
+#include "srcon.h"
 
 void* srcon_create(char* address, int port, char* password) {
     return new srcon(std::string(address), port, std::string(password));
