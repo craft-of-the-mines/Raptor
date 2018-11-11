@@ -86,8 +86,9 @@ std::string srcon::send(const std::string data, const int type){
 	int packet_len = data.length() +SRCON_HEADER_SIZE;
 	unsigned char packet[packet_len];
 	pack(packet, data, packet_len, srcon::id++, type);
-	if(::send(sockfd, packet, packet_len, 0) < 0)
-		return "Sending failed!";
+	int sendReturn = ::send(sockfd, packet, packet_len, 0);
+	if(sendReturn < 0)
+		return std::to_string(sendReturn);
 
 	if(type != SERVERDATA_EXECCOMMAND)
 		return "";
