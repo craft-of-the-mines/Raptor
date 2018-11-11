@@ -1,10 +1,8 @@
 #ifndef SCRON_H
 #define SCRON_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-    
+#include <string>
+
 #define SERVERDATA_AUTH 3
 #define SERVERDATA_EXECCOMMAND 2
 #define SERVERDATA_AUTH_RESPONSE 2
@@ -21,7 +19,7 @@ struct srcon_addr {
 	std::string pass;
 };
 
-class srcon{
+class srcon {
 	const srcon_addr addr;
 	const int sockfd;
 	unsigned int id;
@@ -56,8 +54,4 @@ private:
 };
 
 
-#endif
-
-#ifdef __cplusplus
-}
 #endif
