@@ -1,0 +1,5 @@
+.DS_Store
+/.build
+/Packages
+config.json
+*xcuserdata
