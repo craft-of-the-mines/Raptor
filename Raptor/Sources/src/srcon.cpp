@@ -94,8 +94,6 @@ std::string srcon::send(const std::string data, const int type){
 	if(type != SERVERDATA_EXECCOMMAND)
 		return "";
 	LOG("Hi1");
-
-	return recv(halt_id);
 }
 
 std::string srcon::recv(unsigned long halt_id) const{
