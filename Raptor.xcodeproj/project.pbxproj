@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		946F7DC42197F4F300A2A1D3 /* srcon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 946F7DC22197F4F300A2A1D3 /* srcon.cpp */; };
-		946F7DC52197F4F300A2A1D3 /* srcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 946F7DC32197F4F300A2A1D3 /* srcon.h */; };
+		946F7DC52197F4F300A2A1D3 /* srcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 946F7DC32197F4F300A2A1D3 /* srcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
