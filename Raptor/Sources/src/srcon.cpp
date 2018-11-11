@@ -91,6 +91,7 @@ std::string srcon::send(const std::string data, const int type){
 
 	if(type != SERVERDATA_EXECCOMMAND)
 		return "";
+	LOG("Hi1");
 
 	unsigned long halt_id = id;
 	send("", SERVERDATA_RESPONSE_VALUE);
@@ -103,6 +104,7 @@ std::string srcon::recv(unsigned long halt_id) const{
 	std::string response;
 	bool can_sleep = true;
 	while(1){
+		LOG("Hi2");
 		delete [] buffer;
 		buffer = read_packet(bytes, can_sleep);
 		if(byte32_to_int(buffer) == halt_id)
@@ -113,6 +115,7 @@ std::string srcon::recv(unsigned long halt_id) const{
 		std::string part(&buffer[8], &buffer[8] +offset);
 		response += part;
 	}
+	LOG("Hi3");
 	delete [] buffer;
 	buffer = read_packet(bytes, can_sleep);
 	delete [] buffer;
@@ -142,13 +145,14 @@ size_t srcon::read_packet_len() const{
 }
 
 void srcon::pack(unsigned char packet[], const std::string data, int packet_len, int id, int type) const{
-	int data_len = packet_len -SRCON_HEADER_SIZE;
 	bzero(packet, packet_len);
-	packet[0] = data_len +10;
+	packet[0] = packet_len - 4;
 	packet[4] = id;
 	packet[8] = type;
 	for(int i = 0; i < data_len; i++)
 		packet[12 +i] = data.c_str()[i];
+	packet[packet_len - 2] = 0;
+	packet[packet_len - 1] = 0;
 }
 
 size_t srcon::byte32_to_int(unsigned char* buffer) const{
