@@ -1,5 +1,4 @@
 module Raptor {
-    umbrella header "include/umbrella.h"
-    link umbrella
+    umbrella "Sources/include"
     export *
 }
