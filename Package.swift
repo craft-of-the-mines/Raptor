@@ -7,6 +7,6 @@ let package = Package(
         .library(name: "Raptor", targets: ["Raptor"]),
     ],
     dependencies: [],
-    targets: [.target(name: "Raptor", dependencies: [])],
+    targets: [.target(name: "Raptor", dependencies: [], path: "Raptor/Sources")],
     swiftLanguageVersions: [4]
 )

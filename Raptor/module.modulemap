@@ -1,2 +1,2 @@
-umbrella header "srcon.h"
+umbrella header "include/srcon.h"
 module * { export * }

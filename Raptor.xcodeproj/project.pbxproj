@@ -51,8 +51,7 @@
 		946F7DB82197F46900A2A1D3 /* Raptor */ = {
 			isa = PBXGroup;
 			children = (
-				946F7DC72197F50400A2A1D3 /* include */,
-				946F7DC62197F4F600A2A1D3 /* src */,
+				946F7DC92197F8C900A2A1D3 /* Sources */,
 				946F7DC12197F47C00A2A1D3 /* module.modulemap */,
 				946F7DBA2197F46900A2A1D3 /* Info.plist */,
 			);
@@ -73,6 +72,15 @@
 				946F7DC32197F4F300A2A1D3 /* srcon.h */,
 			);
 			path = include;
+			sourceTree = "<group>";
+		};
+		946F7DC92197F8C900A2A1D3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				946F7DC72197F50400A2A1D3 /* include */,
+				946F7DC62197F4F600A2A1D3 /* src */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
