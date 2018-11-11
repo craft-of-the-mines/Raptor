@@ -1,9 +1,11 @@
 #ifndef SCRON_H
 #define SCRON_H
 
-
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
 #include <string>
-
 
 #define SERVERDATA_AUTH 3
 #define SERVERDATA_EXECCOMMAND 2
@@ -15,7 +17,7 @@
 #define SRCON_SLEEP_THRESHOLD 1024
 #define SRCON_SLEEP_MILLISECONDS 500
 
-struct srcon_addr{
+struct srcon_addr {
 	std::string addr;
 	int port;
 	std::string pass;
@@ -56,4 +58,8 @@ private:
 };
 
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif
