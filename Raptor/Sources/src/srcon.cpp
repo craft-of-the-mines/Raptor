@@ -149,7 +149,7 @@ void srcon::pack(unsigned char packet[], const std::string data, int packet_len,
 	packet[0] = packet_len - 4;
 	packet[4] = id;
 	packet[8] = type;
-	for(int i = 0; i < data_len; i++)
+	for(int i = 0; i < data.length(); i++)
 		packet[12 +i] = data.c_str()[i];
 	packet[packet_len - 2] = 0;
 	packet[packet_len - 1] = 0;
