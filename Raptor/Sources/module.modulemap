@@ -1,0 +1,4 @@
+module Raptor {
+    umbrella header "/Users/ryan/dev/Raptor/Raptor/Sources/include/raptor.h"
+    export *
+}

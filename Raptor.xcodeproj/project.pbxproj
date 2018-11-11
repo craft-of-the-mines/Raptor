@@ -10,6 +10,8 @@
 		946F7DC42197F4F300A2A1D3 /* srcon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 946F7DC22197F4F300A2A1D3 /* srcon.cpp */; };
 		946F7DC52197F4F300A2A1D3 /* srcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 946F7DC32197F4F300A2A1D3 /* srcon.h */; };
 		946F7DCC2198001E00A2A1D3 /* raptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 946F7DCB2198001E00A2A1D3 /* raptor.cpp */; };
+		946F7E55219819C100A2A1D3 /* raptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 946F7DCA2197FF1800A2A1D3 /* raptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		946F7E5721981BE100A2A1D3 /* Raptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F7E5621981BE100A2A1D3 /* Raptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,7 @@
 		946F7DC82197F66E00A2A1D3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		946F7DCA2197FF1800A2A1D3 /* raptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = raptor.h; sourceTree = "<group>"; };
 		946F7DCB2198001E00A2A1D3 /* raptor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = raptor.cpp; sourceTree = "<group>"; };
+		946F7E5621981BE100A2A1D3 /* Raptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +43,7 @@
 				946F7DC82197F66E00A2A1D3 /* Package.swift */,
 				946F7DB82197F46900A2A1D3 /* Raptor */,
 				946F7DB72197F46900A2A1D3 /* Products */,
+				946F7E51219817BD00A2A1D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				946F7DC92197F8C900A2A1D3 /* Sources */,
-				946F7DC12197F47C00A2A1D3 /* module.modulemap */,
 				946F7DBA2197F46900A2A1D3 /* Info.plist */,
 			);
 			path = Raptor;
@@ -67,6 +70,7 @@
 				946F7DC32197F4F300A2A1D3 /* srcon.h */,
 				946F7DCB2198001E00A2A1D3 /* raptor.cpp */,
 				946F7DC22197F4F300A2A1D3 /* srcon.cpp */,
+				946F7E5621981BE100A2A1D3 /* Raptor.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -82,10 +86,18 @@
 		946F7DC92197F8C900A2A1D3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				946F7DC12197F47C00A2A1D3 /* module.modulemap */,
 				946F7DC72197F50400A2A1D3 /* include */,
 				946F7DC62197F4F600A2A1D3 /* src */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		946F7E51219817BD00A2A1D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +107,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946F7E55219819C100A2A1D3 /* raptor.h in Headers */,
 				946F7DC52197F4F300A2A1D3 /* srcon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,9 +119,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 946F7DBE2197F46900A2A1D3 /* Build configuration list for PBXNativeTarget "Raptor" */;
 			buildPhases = (
+				946F7DB32197F46900A2A1D3 /* Headers */,
 				946F7DB12197F46900A2A1D3 /* Sources */,
 				946F7DB22197F46900A2A1D3 /* Frameworks */,
-				946F7DB32197F46900A2A1D3 /* Headers */,
 				946F7DB42197F46900A2A1D3 /* Resources */,
 			);
 			buildRules = (
@@ -131,6 +144,7 @@
 				TargetAttributes = {
 					946F7DB52197F46900A2A1D3 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -166,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946F7E5721981BE100A2A1D3 /* Raptor.swift in Sources */,
 				946F7DC42197F4F300A2A1D3 /* srcon.cpp in Sources */,
 				946F7DCC2198001E00A2A1D3 /* raptor.cpp in Sources */,
 			);
@@ -296,6 +311,7 @@
 		946F7DBF2197F46900A2A1D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -311,10 +327,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = Raptor/module.modulemap;
+				MODULEMAP_FILE = Raptor/Sources/module.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.craft-of-the-mines.Raptor";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -322,6 +339,7 @@
 		946F7DC02197F46900A2A1D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -337,7 +355,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = Raptor/module.modulemap;
+				MODULEMAP_FILE = Raptor/Sources/module.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.craft-of-the-mines.Raptor";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
