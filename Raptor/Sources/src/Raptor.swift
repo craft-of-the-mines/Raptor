@@ -15,13 +15,34 @@ public enum MessageType: Int {
 public class Raptor {
     
     let srcon: UnsafeMutableRawPointer
+    private let ipPointer: UnsafePointer<Int8>
+    private let port: Int
+    private let passwordPointer: UnsafePointer<Int8>
     
-    init(ip: String, port: Int, password: String) {
-        srcon = srcon_create(UnsafePointer((ip as NSString).utf8String!), Int32(port), UnsafePointer((password as NSString).utf8String!))
+    var ip: String {
+        return String(cString: ipPointer)
     }
     
-    func send(message: String, type: MessageType = .serverData) {
-        srcon_send(srcon, UnsafePointer((message as NSString).utf8String!), Int32(type.rawValue))
+    var password: String {
+        return String(cString: passwordPointer)
+    }
+    
+    init(ip: String, port: Int, password: String) {
+        self.ipPointer = UnsafePointer((ip as NSString).utf8String!)
+        self.port = port
+        self.passwordPointer = UnsafePointer((password as NSString).utf8String!)
+        srcon = srcon_create(ipPointer, Int32(port), passwordPointer)
+    }
+    
+    deinit {
+        ipPointer.deallocate()
+        passwordPointer.deallocate()
+    }
+    
+    func send(message: String, type: MessageType = .serverData) -> String {
+        return String(cString: message.withCString {
+            srcon_send(srcon, $0, Int32(type.rawValue))
+        })
     }
     
 }
