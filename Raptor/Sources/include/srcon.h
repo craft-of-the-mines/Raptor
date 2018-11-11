@@ -5,8 +5,6 @@
 extern "C" {
 #endif
     
-#include <string>
-
 #define SERVERDATA_AUTH 3
 #define SERVERDATA_EXECCOMMAND 2
 #define SERVERDATA_AUTH_RESPONSE 2
