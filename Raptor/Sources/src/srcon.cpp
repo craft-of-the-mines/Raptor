@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <chrono>
 #include <thread>
+#include <errno.h>
 
 #include "srcon.h"
 
@@ -88,7 +89,7 @@ std::string srcon::send(const std::string data, const int type){
 	pack(packet, data, packet_len, srcon::id++, type);
 	int sendReturn = ::send(sockfd, packet, packet_len, 0);
 	if(sendReturn < 0)
-		return std::to_string(sendReturn);
+		return std::to_string(errno);
 
 	if(type != SERVERDATA_EXECCOMMAND)
 		return "";
