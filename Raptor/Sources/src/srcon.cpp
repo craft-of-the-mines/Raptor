@@ -95,8 +95,6 @@ std::string srcon::send(const std::string data, const int type){
 		return "";
 	LOG("Hi1");
 
-	unsigned long halt_id = id;
-	send("", SERVERDATA_RESPONSE_VALUE);
 	return recv(halt_id);
 }
 
