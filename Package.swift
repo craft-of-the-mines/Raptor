@@ -6,7 +6,11 @@ let package = Package(
     products: [
         .library(name: "Raptor", targets: ["Raptor"]),
     ],
-    dependencies: [],
-    targets: [.target(name: "Raptor", dependencies: [], path: "Raptor/Sources")],
+    dependencies: [
+        .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from: "1.0.24")
+    ],
+    targets: [.target(name: "Raptor", dependencies: [
+        "Socket"
+    ], path: "Raptor/Sources")],
     swiftLanguageVersions: [4]
 )
